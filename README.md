@@ -1,54 +1,44 @@
-# React + TypeScript + Vite
+# 🧠 Typing Master – A Complete Typing & Keyboard Skill Trainer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Typing Master**, a comprehensive web-based typing test and keyboard mastery platform built for learners, coders, and productivity enthusiasts alike. This tool is designed to improve your typing speed, accuracy, and finger placement using interactive tests and real-time feedback.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+### ✍️ Typing Tests
+- **Alphabet Practice:** Sequential (A-Z) and jumbled modes for foundational training.
+- **Easy Mode:** Practice with simple words and phrases for beginners.
+- **Hard Mode:** Tackle complex sentences and punctuation-heavy passages.
+- **Code Writing Mode:** Mimic real-world programming environments by typing code snippets for improved syntax awareness.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🎯 Performance Tracking
+- **WPM (Words Per Minute):** Real-time speed tracking.
+- **Accuracy:** Detects and displays character- and word-level mistakes.
+- **Error Detection:** Highlights incorrect inputs and helps you improve over time.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### ⌨️ Keyboard Mastery
+- **Finger Placement Training:** Visual guidance to teach proper finger positioning.
+- **Targeted Practice:** Exercises designed to train muscle memory and reduce typing fatigue.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Tech Stack
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **Frontend:** React js  
+- **Styling:** Tailwind css
+
+---
+
+<!-- ## 📸 Screenshots
+
+*(Optional – Insert images or GIFs of the interface, modes, and results page)*
+
+--- -->
+
+## 📦 How to Use
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Utkarsh-Sorathia/Typing-master.git
