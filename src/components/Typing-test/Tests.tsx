@@ -5,23 +5,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBolt,
   faCircleCheck,
+  faCode,
   faKeyboard,
 } from '@fortawesome/free-solid-svg-icons'
+import CodeMode from '../Modes/CodeMode'
 
 const Tests: React.FC = () => {
-  const [mode, setMode] = useState<'easy' | 'hard'>('easy')
+  const [mode, setMode] = useState<'easy' | 'hard' | 'code'>('easy')
 
   return (
-    <div
-      className="flex flex-col items-center justify-center p-4"
-    >
+    <div className="flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-4xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-10">
-          {/* <h1 className="text-5xl font-bold text-gray-800 mb-3">Typing Test</h1>
-          <p className="text-xl text-gray-600">
-            Test and improve your typing speed and accuracy
-          </p> */}
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 flex items-center justify-center">
             <FontAwesomeIcon
               icon={faKeyboard}
@@ -36,8 +31,6 @@ const Tests: React.FC = () => {
             Measure your speed, improve your accuracy, and challenge yourself!
           </p>
         </div>
-
-        {/* Mode Selector */}
         <div className="flex justify-center space-x-6 mb-12">
           <button
             className={`mode-btn px-8 py-3 rounded-full text-lg font-semibold w-40 ${
@@ -75,22 +68,41 @@ const Tests: React.FC = () => {
               Hard
             </div>
           </button>
+          <button
+            className={`mode-btn px-8 py-3 rounded-full text-lg font-semibold w-40 ${
+              mode === 'code'
+                ? 'active-mode'
+                : 'bg-white border border-gray-200'
+            }`}
+            onClick={() => setMode('code')}
+            style={{
+              transition: 'all 0.3s ease',
+              boxShadow:
+                '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            }}
+          >
+            <div className="flex items-center justify-center gap-2">
+              <FontAwesomeIcon icon={faCode} />
+              Code
+            </div>
+          </button>
         </div>
-
-        {/* Content Area */}
         <div className="typing-card p-8">
-          {mode === 'easy' ? (
+          {mode === 'code' ? (
             <div className="text-center">
-              <EasyMode />
+              <CodeMode />
+            </div>
+          ) : mode === 'hard' ? (
+            <div className="text-center">
+              <HardMode />
             </div>
           ) : (
             <div className="text-center">
-              <HardMode />
+              <EasyMode />
             </div>
           )}
         </div>
       </div>
-      {/* Inline style for .active-mode and .mode-btn */}
       <style>{`
         .mode-btn {
           transition: all 0.3s ease;
@@ -106,7 +118,6 @@ const Tests: React.FC = () => {
           border: none;
         }
       `}</style>
-      {/* <KeyboardLearning /> */}
     </div>
   )
 }
