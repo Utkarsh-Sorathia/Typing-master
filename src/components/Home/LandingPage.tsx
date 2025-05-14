@@ -262,7 +262,7 @@ const Typingo: React.FC = () => {
                 <ModeCard
                   icon={<FaClock className="text-xl" />}
                   color="purple"
-                  title="Code Mode"
+                  title="Time-Based Mode"
                   desc="Practice typing code with special characters."
                   highlight={
                     <>
