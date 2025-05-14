@@ -10,7 +10,6 @@ import {
   FaBullseye,
   FaTimesCircle,
   FaRedo,
-  FaHeart,
 } from 'react-icons/fa'
 
 type Mode = 5 | 10 | 15 | null
@@ -357,14 +356,6 @@ const HardMode: React.FC = () => {
               Press any key to start. Type all the words as fast as you can!
             </p>
           </div>
-        </div>
-
-        {/* Footer */}
-        <div className="bg-gray-50 p-4 text-center text-sm text-gray-500">
-          <p>
-            Made with <FaHeart className="inline text-rose-500" /> by Typing
-            Master
-          </p>
         </div>
       </div>
       {/* Custom CSS for blinking cursor */}

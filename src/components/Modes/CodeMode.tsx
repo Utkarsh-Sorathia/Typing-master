@@ -5,7 +5,6 @@ import {
   FaBullseye,
   FaTimesCircle,
   FaRedo,
-  FaHeart,
   FaCode,
 } from 'react-icons/fa'
 
@@ -289,14 +288,6 @@ const CodeMode: React.FC = () => {
               you can!
             </p>
           </div>
-        </div>
-
-        {/* Footer */}
-        <div className="bg-gray-50 p-4 text-center text-sm text-gray-500">
-          <p>
-            Made with <FaHeart className="inline text-rose-500" /> by Typing
-            Master
-          </p>
         </div>
       </div>
       {/* Custom CSS for blinking cursor */}

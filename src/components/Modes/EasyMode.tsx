@@ -382,13 +382,6 @@ export default function EasyMode() {
             </>
           )}
         </div>
-
-        {/* Footer */}
-        <div className="bg-gray-50 p-4 text-center text-sm text-gray-500">
-          <p>
-            Made with <span className="text-rose-500">♥</span> by Typing Master
-          </p>
-        </div>
       </div>
     </div>
   )
