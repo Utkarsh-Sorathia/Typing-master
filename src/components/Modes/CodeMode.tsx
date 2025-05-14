@@ -136,7 +136,7 @@ const CodeMode: React.FC = () => {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-2xl font-bold flex items-center">
-                <FaCode className="mr-2" /> Code Typing Master
+                <FaCode className="mr-2" /> Code Typingo
               </h1>
             </div>
             <div className="flex space-x-2">

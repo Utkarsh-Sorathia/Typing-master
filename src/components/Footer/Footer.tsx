@@ -14,7 +14,7 @@ export default function Main() {
                   icon={faKeyboard}
                   className="text-indigo-400 text-2xl mr-2"
                 />
-                <span className="text-xl font-bold">TypeMaster</span>
+                <span className="text-xl font-bold">Typingo</span>
               </div>
               <p className="text-gray-400">
                 The ultimate platform to test and improve your typing skills.
@@ -25,8 +25,7 @@ export default function Main() {
         </div>
         <div className="me-16 text-sm text-white">
           <p>
-            Made with <FaHeart className="inline text-rose-500" /> by Typing
-            Master
+            Made with <FaHeart className="inline text-rose-500" /> by Typingo
           </p>
         </div>
       </footer>

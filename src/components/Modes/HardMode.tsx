@@ -173,7 +173,7 @@ const HardMode: React.FC = () => {
         <div className="bg-gradient-to-r from-blue-500 to-green-500 p-6 text-white">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-2xl font-bold">Typing Master</h1>
+              <h1 className="text-2xl font-bold">Typingo</h1>
             </div>
             <div className="flex space-x-2">
               <span className="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">
@@ -192,13 +192,13 @@ const HardMode: React.FC = () => {
               <div className="flex justify-center space-x-4">
                 <button
                   onClick={() => handleModeSelect(5)}
-                  className="mode-btn px-6 py-3 bg-primary/10 text-primary rounded-lg font-medium hover:bg-primary/20 transition-all flex items-center"
+                  className="mode-btn px-6 py-3 bg-blue-200 text-primary rounded-lg font-medium hover:bg-primary/20 transition-all flex items-center"
                 >
                   <FaBolt className="mr-2" /> 5 Words
                 </button>
                 <button
                   onClick={() => handleModeSelect(10)}
-                  className="mode-btn px-6 py-3 bg-secondary/10 text-secondary rounded-lg font-medium hover:bg-secondary/20 transition-all flex items-center"
+                  className="mode-btn px-6 py-3 bg-green-200 text-secondary rounded-lg font-medium hover:bg-secondary/20 transition-all flex items-center"
                 >
                   <FaFire className="mr-2" /> 10 Words
                 </button>

@@ -3,7 +3,7 @@
 
     <!-- Main page -->
     <url>
-        <loc>https://typing-master-utkarsh.vercel.app/</loc>
+        <loc>https://typingo.vercel.app/</loc>
         <lastmod>2025-04-11T18:00:00.000Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
@@ -11,7 +11,15 @@
 
     <!-- Typing Tests page -->
     <url>
-        <loc>https://typing-master-utkarsh.vercel.app/tests</loc>
+        <loc>https://typingo.vercel.app/tests</loc>
+        <lastmod>2025-04-11T18:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Time Base Typing Tests page -->
+    <url>
+        <loc>https://typingo.vercel.app/time-base</loc>
         <lastmod>2025-04-11T18:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -19,7 +27,7 @@
 
     <!-- Keyboard Mastery page -->
     <url>
-        <loc>https://typing-master-utkarsh.vercel.app/keyboard-mastery</loc>
+        <loc>https://typingo.vercel.app/keyboard-mastery</loc>
         <lastmod>2025-04-11T18:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

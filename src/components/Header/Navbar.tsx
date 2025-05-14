@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
                   className="text-indigo-500 text-2xl mr-2"
                 />
                 <span className="text-xl font-bold gradient-text bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600">
-                  TypingMaster
+                  Typingo
                 </span>
               </div>
             </div>
@@ -35,6 +35,12 @@ const Navbar: React.FC = () => {
               className="nav-link text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
             >
               Tests
+            </Link>
+            <Link
+              to="/time-base"
+              className="nav-link text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Time
             </Link>
             <Link
               to="/keyboard-mastery"

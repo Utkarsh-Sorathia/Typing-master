@@ -1,6 +1,6 @@
-# 🧠 Typing Master – A Complete Typing & Keyboard Skill Trainer
+# 🧠 Typingo – A Complete Typing & Keyboard Skill Trainer
 
-Welcome to **Typing Master**, a comprehensive web-based typing test and keyboard mastery platform built for learners, coders, and productivity enthusiasts alike. This tool is designed to improve your typing speed, accuracy, and finger placement using interactive tests and real-time feedback.
+Welcome to **Typingo**, a comprehensive web-based typing test and keyboard mastery platform built for learners, coders, and productivity enthusiasts alike. This tool is designed to improve your typing speed, accuracy, and finger placement using interactive tests and real-time feedback.
 
 ---
 

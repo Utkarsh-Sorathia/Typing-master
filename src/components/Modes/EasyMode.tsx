@@ -171,7 +171,7 @@ export default function EasyMode() {
         <div className="bg-gradient-to-r from-blue-500 to-green-500 p-6 text-white">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-2xl font-bold">Typing Master</h1>
+              <h1 className="text-2xl font-bold">Typingo</h1>
             </div>
             <div className="flex space-x-2">
               <span className="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">

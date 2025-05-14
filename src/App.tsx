@@ -9,10 +9,10 @@ const App: React.FC = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-100">
+      <div className="bg-gray-100">
         <Navbar />
-        <div className="pt-16">
-        <Routers />
+        <div className="min-h-screen pt-16">
+          <Routers />
         </div>
         <Footer />
       </div>

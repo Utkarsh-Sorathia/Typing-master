@@ -12,6 +12,8 @@ import {
   FaTachometerAlt,
   FaBullseye,
   FaChartLine,
+  FaClock,
+  FaStopwatch,
 } from 'react-icons/fa'
 import clsx from 'clsx'
 import { Link } from 'react-router-dom'
@@ -25,7 +27,7 @@ function formatTime(sec: number) {
   return `0:${sec < 10 ? '0' : ''}${sec}`
 }
 
-const TypingMaster: React.FC = () => {
+const Typingo: React.FC = () => {
   // State
   const [userInput, setUserInput] = useState<string>('')
   const [started, setStarted] = useState(false)
@@ -250,11 +252,25 @@ const TypingMaster: React.FC = () => {
                 color="purple"
                 title="Code Mode"
                 desc="Practice typing code with special characters."
-                highlight={<> Code syntax</>}
+                highlight={<><FaCode className="mr-1" /> Code syntax</>}
               />
             </Link>
             {/* Mastery */}
-            <div className="col-span-2 lg:col-span-4 mx-auto max-w-2xl">
+            <div className="col-span-2 lg:col-span-4 mx-auto max-w-2xl flex gap-4">
+              {/* Time Based */}
+              <Link to="/time-base">
+                <ModeCard
+                  icon={<FaClock className="text-xl" />}
+                  color="purple"
+                  title="Code Mode"
+                  desc="Practice typing code with special characters."
+                  highlight={
+                    <>
+                      <FaStopwatch className="mr-1" /> Time based
+                    </>
+                  }
+                />
+              </Link>
               <Link to="/keyboard-mastery">
                 <ModeCard
                   icon={<FaTrophy className="text-xl" />}
@@ -428,4 +444,4 @@ const StatCard: React.FC<StatCardProps> = ({
   </div>
 )
 
-export default TypingMaster
+export default Typingo
