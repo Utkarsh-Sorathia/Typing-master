@@ -1,19 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import {
-  FaArrowRight,
-  FaSmile,
-  FaUser,
-  FaFire,
-  FaCode,
-  FaTrophy,
-  FaCheckCircle,
-  FaTimesCircle,
-  FaKeyboard,
-  FaTachometerAlt,
-  FaBullseye,
-  FaChartLine,
-  FaClock,
-  FaStopwatch,
+  FaArrowRight, FaSmile, FaUser, FaFire, FaCode, FaTrophy,
+  FaCheckCircle, FaTimesCircle, FaKeyboard, FaTachometerAlt,
+  FaBullseye, FaChartLine, FaClock, FaStopwatch,
 } from 'react-icons/fa'
 import clsx from 'clsx'
 import { Link } from 'react-router-dom'
@@ -28,7 +18,6 @@ function formatTime(sec: number) {
 }
 
 const Typingo: React.FC = () => {
-  // State
   const [userInput, setUserInput] = useState<string>('')
   const [started, setStarted] = useState(false)
   const [timeLeft, setTimeLeft] = useState(TEST_DURATION)
@@ -108,19 +97,31 @@ const Typingo: React.FC = () => {
     </p>
   )
 
-  // --- JSX ---
   return (
     <div className="bg-slate-50 font-sans min-h-screen">
+      {/* --- SEO TAGS --- */}
+      <Helmet>
+        <title>Typingo - Free Online Typing Test & Practice</title>
+        <meta name="description" content="Boost your typing speed and accuracy with Typingo. Take interactive typing tests in multiple modes and track your progress!" />
+        <meta name="keywords" content="typing test, typing speed, typing accuracy, online typing, typing practice, code typing, keyboard mastery" />
+        <meta property="og:title" content="Typingo - Free Online Typing Test" />
+        <meta property="og:description" content="Boost your typing speed and accuracy with Typingo. Take interactive typing tests in multiple modes and track your progress!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://typingo.vercel.app" />
+        <meta property="og:image" content="https://typingo.vercel.app/og-image.png" />
+        <link rel="canonical" href="https://typingo.vercel.app" />
+      </Helmet>
+
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-indigo-50">
+      <section className="py-10 md:py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center">
             {/* Left */}
-            <div className="md:w-1/2 mb-12 md:mb-0">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            <div className="md:w-1/2 mb-10 md:mb-0">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                 Master Your <span className="text-blue-600">Typing Skills</span>
               </h1>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8">
                 Improve your typing speed and accuracy with our interactive
                 typing tests. Perfect for beginners and advanced typists alike.
               </p>
@@ -141,9 +142,9 @@ const Typingo: React.FC = () => {
               </div>
             </div>
             {/* Right */}
-            <div className="md:w-1/2 flex justify-center">
+            <div className="md:w-1/2 flex justify-center w-full">
               <div className="relative max-w-md w-full">
-                <div className="bg-white p-6 rounded-xl shadow-xl floating glow transition-all duration-300">
+                <div className="bg-white p-4 sm:p-6 rounded-xl shadow-xl floating glow transition-all duration-300">
                   <div className="flex justify-between items-center mb-4">
                     <span
                       className="px-3 py-1 rounded-full text-xs font-medium cursor-pointer transition bg-blue-100 text-blue-800"
@@ -157,7 +158,7 @@ const Typingo: React.FC = () => {
                   </div>
                   <div
                     id="textDisplay"
-                    className="bg-gray-50 rounded-lg p-4 mb-4 h-52 overflow-y-auto border font-mono text-base"
+                    className="bg-gray-50 rounded-lg p-3 sm:p-4 mb-4 h-40 sm:h-52 overflow-y-auto border font-mono text-base"
                   >
                     {renderText()}
                   </div>
@@ -165,11 +166,11 @@ const Typingo: React.FC = () => {
                     ref={inputRef}
                     value={userInput}
                     onChange={handleInput}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                     placeholder="Start typing here..."
                     disabled={inputDisabled}
                   />
-                  <div className="grid grid-cols-3 gap-2 mt-4 text-center">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-4 text-center">
                     <div className="bg-gray-100 p-2 rounded">
                       <p className="text-xs text-gray-500">Speed</p>
                       <p className="font-bold">{wpm} WPM</p>
@@ -190,11 +191,11 @@ const Typingo: React.FC = () => {
         </div>
       </section>
 
-      {/* Modes Section (for display/marketing only) */}
-      <section id="modes" className="py-20 bg-white">
+      {/* Modes Section */}
+      <section id="modes" className="py-16 sm:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
               Typing Test Modes
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -202,7 +203,7 @@ const Typingo: React.FC = () => {
               difficulty levels.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Easy */}
             <Link to="/tests">
               <ModeCard
@@ -255,54 +256,52 @@ const Typingo: React.FC = () => {
                 highlight={<><FaCode className="mr-1" /> Code syntax</>}
               />
             </Link>
-            {/* Mastery */}
-            <div className="col-span-2 lg:col-span-4 mx-auto max-w-2xl flex gap-4">
-              {/* Time Based */}
-              <Link to="/time-base">
-                <ModeCard
-                  icon={<FaClock className="text-xl" />}
-                  color="purple"
-                  title="Time-Based Mode"
-                  desc="Practice typing code with special characters."
-                  highlight={
-                    <>
-                      <FaStopwatch className="mr-1" /> Time based
-                    </>
-                  }
-                />
-              </Link>
-              <Link to="/keyboard-mastery">
-                <ModeCard
-                  icon={<FaTrophy className="text-xl" />}
-                  color="amber"
-                  title="Keyboard Mastery"
-                  desc="The ultimate challenge with random keys and finger positioning exercises."
-                  highlight={
-                    <>
-                      <FaKeyboard className="mr-1" /> Advanced finger
-                      positioning
-                    </>
-                  }
-                  center
-                />
-              </Link>
-            </div>
+          </div>
+          {/* Mastery Section: Stack on mobile, row on desktop */}
+          <div className="flex flex-col lg:flex-row gap-4 mt-8 justify-center">
+            <Link to="/time-base" className="flex-1">
+              <ModeCard
+                icon={<FaClock className="text-xl" />}
+                color="purple"
+                title="Time-Based Mode"
+                desc="Practice typing code with special characters."
+                highlight={
+                  <>
+                    <FaStopwatch className="mr-1" /> Time based
+                  </>
+                }
+              />
+            </Link>
+            <Link to="/keyboard-mastery" className="flex-1">
+              <ModeCard
+                icon={<FaTrophy className="text-xl" />}
+                color="amber"
+                title="Keyboard Mastery"
+                desc="The ultimate challenge with random keys and finger positioning exercises."
+                highlight={
+                  <>
+                    <FaKeyboard className="mr-1" /> Advanced finger positioning
+                  </>
+                }
+                center
+              />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-br from-indigo-50 to-blue-50">
+      <section className="py-10 sm:py-16 bg-gradient-to-br from-indigo-50 to-blue-50">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
               Track Your Progress
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Monitor your typing performance across different metrics.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <StatCard
               icon={<FaTachometerAlt className="text-xl" />}
               color="blue"

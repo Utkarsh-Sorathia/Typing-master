@@ -1,6 +1,7 @@
 import { faBolt, faKeyboard } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useRef, useState } from 'react'
+import { Helmet } from 'react-helmet'
 import {
   FaStopwatch,
   FaTachometerAlt,
@@ -49,7 +50,7 @@ const TypingSpeedTest: React.FC = () => {
   const timerRef = useRef<NodeJS.Timeout | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  // Handle duration change (always available)
+  // Handle duration change
   const handleSelectDuration = (duration: Duration) => {
     setTestDuration(duration)
     setTimeLeft(duration)
@@ -63,7 +64,7 @@ const TypingSpeedTest: React.FC = () => {
     setShowModal(false)
   }
 
-  // Start test (use existing text if present, otherwise fetch new)
+  // Start test
   const startTest = async () => {
     if (testStarted) return
 
@@ -82,7 +83,7 @@ const TypingSpeedTest: React.FC = () => {
     setTimeout(() => inputRef.current?.focus(), 0)
   }
 
-  // Try again (reuse lastTestText, but don't start test)
+  // Try again
   const tryAgainTest = () => {
     setTestText(lastTestText)
     setUserInput('')
@@ -95,7 +96,7 @@ const TypingSpeedTest: React.FC = () => {
     setTimeout(() => inputRef.current?.focus(), 0)
   }
 
-  // New test (fetch new text, but don't start test)
+  // New test
   const newTest = async () => {
     const text = await fetchRandomWords(testDuration > 30 ? 50 : 25)
     setTestText(text)
@@ -195,25 +196,41 @@ const TypingSpeedTest: React.FC = () => {
       : 0
 
   return (
-    <div className="min-h-screen bg-slate-100 font-sans">
-      <div className="text-center mb-20 pt-10">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 flex items-center justify-center">
-          <FontAwesomeIcon icon={faKeyboard} className="text-indigo-500 mr-4" />
-          <span className="text-5xl font-bold gradient-text bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600 p-2">
+    <div className="font-sans px-2">
+      {/* SEO Tags */}
+      <Helmet>
+        <title>Time Based Typing Test Challenge | Typingo</title>
+        <meta
+          name="description"
+          content="Test your typing speed and accuracy in a time-based challenge. Practice and improve your typing skills with Typingo!"
+        />
+        <meta name="keywords" content="typing test, speed test, accuracy, typing challenge, time-based, Typingo" />
+        <meta name="author" content="Your Name" />
+        <meta property="og:title" content="Time Based Typing Test Challenge" />
+        <meta property="og:description" content="Test your typing speed and accuracy in a time-based challenge. Practice and improve your typing skills with Typingo!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/time-based-og-image.png" />
+        <meta property="og:url" content="https://typingo.vercel.app/time-base" />
+        <link rel="canonical" href="https://typingo.vercel.app/time-base" />
+      </Helmet>
+      <div className="text-center mb-10 pt-8 px-2">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 flex flex-col sm:flex-row items-center justify-center gap-2">
+          <FontAwesomeIcon icon={faKeyboard} className="text-indigo-500" />
+          <span className="gradient-text bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600 p-2">
             Time Based Typing Test Challenge
           </span>
-          <FontAwesomeIcon icon={faBolt} className="text-yellow-400 ml-4" />
+          <FontAwesomeIcon icon={faBolt} className="text-yellow-400" />
         </h1>
-        <p className="text-lg md:text-xl text-gray-600">
+        <p className="text-base sm:text-lg md:text-xl text-gray-600">
           Measure your speed, improve your accuracy, and challenge yourself!
         </p>
       </div>
       <div className="w-full max-w-4xl bg-white rounded-xl shadow-lg overflow-hidden mx-auto">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-500 to-green-500 p-6 text-white">
-          <div className="flex justify-between items-center">
+        <div className="bg-gradient-to-r from-blue-500 to-green-500 p-4 sm:p-6 text-white">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
             <div>
-              <h1 className="text-2xl font-bold">Typingo</h1>
+              <h1 className="text-xl sm:text-2xl font-bold">Typingo</h1>
             </div>
             <div className="flex space-x-2">
               <span className="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">
@@ -223,18 +240,17 @@ const TypingSpeedTest: React.FC = () => {
           </div>
         </div>
 
-        {/* Time Selection (always visible) */}
-        <div className="flex justify-center space-x-4 my-6">
+        {/* Time Selection */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 my-4 sm:my-6">
           {DURATIONS.map((duration) => (
             <button
               key={duration}
               onClick={() => handleSelectDuration(duration)}
               disabled={testStarted}
-              className={`px-6 py-3 rounded-lg font-medium flex items-center space-x-2 transition-all
-                ${
-                  testDuration === duration
-                    ? 'bg-blue-500 text-white shadow'
-                    : 'bg-blue-100 text-blue-700 hover:bg-blue-200'
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium flex items-center space-x-2 transition-all
+                ${testDuration === duration
+                  ? 'bg-blue-500 text-white shadow'
+                  : 'bg-blue-100 text-blue-700 hover:bg-blue-200'
                 }
                 ${testStarted ? 'opacity-60 cursor-not-allowed' : ''}
               `}
@@ -246,11 +262,11 @@ const TypingSpeedTest: React.FC = () => {
         </div>
 
         {/* Main Content */}
-        <div className="p-6 pt-0">
+        <div className="p-4 sm:p-6 pt-0">
           {/* Timer and Stats */}
           {(testText || testStarted) && (
             <div className="flex flex-col md:flex-row md:justify-between items-center mb-6 gap-4">
-              <div className="flex items-center text-2xl font-bold text-gray-800 space-x-2  mx-auto">
+              <div className="flex items-center text-xl sm:text-2xl font-bold text-gray-800 space-x-2 mx-auto">
                 <FaStopwatch />
                 <span>{formatTime(timeLeft)}</span>
               </div>
@@ -269,7 +285,7 @@ const TypingSpeedTest: React.FC = () => {
 
           {/* Text Display */}
           <div
-            className="bg-gray-50 rounded-lg p-4 mb-6 h-40 overflow-y-auto border border-gray-200 font-mono text-lg"
+            className="bg-gray-50 rounded-lg p-3 sm:p-4 mb-6 h-32 sm:h-40 overflow-y-auto border border-gray-200 font-mono text-base sm:text-lg"
             style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
           >
             {renderText()}
@@ -280,7 +296,7 @@ const TypingSpeedTest: React.FC = () => {
             <input
               ref={inputRef}
               type="text"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+              className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
               placeholder="Start typing here..."
               value={userInput}
               onChange={(e) => {
@@ -290,11 +306,10 @@ const TypingSpeedTest: React.FC = () => {
               spellCheck={false}
             />
             <button
-              className={`flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all w-1/4 mx-auto
-                ${
-                  testStarted
-                    ? 'bg-gray-400 text-white cursor-not-allowed'
-                    : 'bg-blue-500 text-white hover:bg-blue-600'
+              className={`flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all w-full sm:w-1/4 mx-auto
+                ${testStarted
+                  ? 'bg-gray-400 text-white cursor-not-allowed'
+                  : 'bg-blue-500 text-white hover:bg-blue-600'
                 }
               `}
               onClick={startTest}
@@ -319,54 +334,54 @@ const TypingSpeedTest: React.FC = () => {
 
       {/* Results Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-2">
+          <div className="bg-white rounded-xl p-4 sm:p-8 max-w-md w-full mx-auto">
             <div className="text-center mb-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-2">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
                 Test Results
               </h2>
               <p className="text-gray-600">Your typing performance</p>
             </div>
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="bg-blue-50 p-4 rounded-lg flex flex-col items-center">
-                <FaTachometerAlt className="text-blue-500 text-2xl mb-1" />
-                <div className="text-blue-500 font-bold text-3xl mb-1">
+            <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-6">
+              <div className="bg-blue-50 p-2 sm:p-4 rounded-lg flex flex-col items-center">
+                <FaTachometerAlt className="text-blue-500 text-xl sm:text-2xl mb-1" />
+                <div className="text-blue-500 font-bold text-xl sm:text-3xl mb-1">
                   {wpm}
                 </div>
                 <div className="text-xs text-blue-600">WPM</div>
               </div>
-              <div className="bg-green-50 p-4 rounded-lg flex flex-col items-center">
-                <FaBullseye className="text-green-500 text-2xl mb-1" />
-                <div className="text-green-500 font-bold text-3xl mb-1">
+              <div className="bg-green-50 p-2 sm:p-4 rounded-lg flex flex-col items-center">
+                <FaBullseye className="text-green-500 text-xl sm:text-2xl mb-1" />
+                <div className="text-green-500 font-bold text-xl sm:text-3xl mb-1">
                   {accuracy}
                 </div>
                 <div className="text-xs text-green-600">Accuracy</div>
               </div>
-              <div className="bg-purple-50 p-4 rounded-lg flex flex-col items-center">
-                <FaTimesCircle className="text-purple-500 text-2xl mb-1" />
-                <div className="text-purple-500 font-bold text-3xl mb-1">
+              <div className="bg-purple-50 p-2 sm:p-4 rounded-lg flex flex-col items-center">
+                <FaTimesCircle className="text-purple-500 text-xl sm:text-2xl mb-1" />
+                <div className="text-purple-500 font-bold text-xl sm:text-3xl mb-1">
                   {errors}
                 </div>
                 <div className="text-xs text-purple-600">Errors</div>
               </div>
-              <div className="bg-amber-50 p-4 rounded-lg flex flex-col items-center">
-                <FaStopwatch className="text-amber-500 text-2xl mb-1" />
-                <div className="text-amber-500 font-bold text-3xl mb-1">
+              <div className="bg-amber-50 p-2 sm:p-4 rounded-lg flex flex-col items-center">
+                <FaStopwatch className="text-amber-500 text-xl sm:text-2xl mb-1" />
+                <div className="text-amber-500 font-bold text-xl sm:text-3xl mb-1">
                   {testDuration}
                 </div>
                 <div className="text-xs text-amber-600">Seconds</div>
               </div>
             </div>
-            <div className="flex justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4">
               <button
-                className="flex items-center px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+                className="flex items-center justify-center px-4 sm:px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition w-full sm:w-auto"
                 onClick={tryAgainTest}
                 type="button"
               >
                 <FaRedo className="mr-2" /> Try Again
               </button>
               <button
-                className="flex items-center px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+                className="flex items-center justify-center px-4 sm:px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition w-full sm:w-auto"
                 onClick={newTest}
                 type="button"
               >
