@@ -177,7 +177,7 @@ export default function KeyboardLearning() {
     <section className="max-w-7xl mx-auto mt-4 px-2 sm:px-4">
       {/* SEO Tags */}
       <Helmet>
-        <title>Keyboard Mastery | Typingo</title>
+        <title>Typingo | Keyboard Mastery</title>
         <meta name="description" content="Learn proper finger placement and typing technique with our interactive keyboard visualization and practice tool." />
         <meta name="keywords" content="typing, keyboard, practice, finger placement, touch typing, learn typing, typing visualization" />
         <meta property="og:title" content="Keyboard Mastery" />

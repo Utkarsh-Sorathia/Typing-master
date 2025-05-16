@@ -169,7 +169,7 @@ export default function EasyMode() {
     <main className="flex items-center justify-center p-2 sm:p-4 font-sans" id="easy-mode">
       {/* SEO tags */}
       <Helmet>
-        <title>Easy Typing Test | Typingo</title>
+        <title>Typingo | Easy Typing Test</title>
         <meta name="description" content="Practice your typing skills with alphabets and words in Easy Mode. Track your speed and accuracy with Typingo." />
         <meta property="og:title" content="Easy Typing Test | Typingo" />
         <meta property="og:description" content="Practice your typing skills with alphabets and words in Easy Mode. Track your speed and accuracy with Typingo." />

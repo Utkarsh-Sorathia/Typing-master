@@ -196,10 +196,10 @@ const TypingSpeedTest: React.FC = () => {
       : 0
 
   return (
-    <div className="font-sans px-2">
+    <div className="font-sans px-2 py-2">
       {/* SEO Tags */}
       <Helmet>
-        <title>Time Based Typing Test Challenge | Typingo</title>
+        <title>Typingo | Time Based Typing</title>
         <meta
           name="description"
           content="Test your typing speed and accuracy in a time-based challenge. Practice and improve your typing skills with Typingo!"

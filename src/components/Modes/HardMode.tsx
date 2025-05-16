@@ -162,7 +162,7 @@ const HardMode: React.FC = () => {
     <div className="flex items-center justify-center p-2 sm:p-4 font-sans" id="hard-mode">
       {/* SEO Tags */}
       <Helmet>
-        <title>Hard Mode Typing Test | Typingo</title>
+        <title>Typingo | Hard Mode Typing Test</title>
         <meta name="description" content="Challenge yourself with Hard Mode in Typingo. Test your typing speed and accuracy with random words. Improve your WPM and accuracy in a fun, competitive environment." />
         <meta name="keywords" content="typing test, hard mode, WPM, accuracy, speed test, typing challenge" />
         <link rel="canonical" href="https://typingo.vercel.app/tests" />
