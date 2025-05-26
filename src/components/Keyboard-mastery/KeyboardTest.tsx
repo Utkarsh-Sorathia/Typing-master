@@ -323,7 +323,8 @@ export default function KeyboardLearning() {
 
       {/* Typing Card */}
       <div className="mt-8 sm:mt-12 flex justify-center mb-8 sm:mb-12">
-        <div className="w-full max-w-3xl bg-white rounded-2xl shadow-2xl border-4 border-indigo-200 p-4 sm:p-10 min-h-[100px] sm:min-h-[160px] flex items-center text-lg sm:text-3xl font-mono select-none break-words">
+        <div className="w-full max-w-3xl bg-white rounded-2xl shadow-2xl border-4 border-indigo-200 p-4 sm:p-10 min-h-[100px] sm:min-h-[160px] flex items-center text-lg sm:text-3xl font-mono select-none break-words"
+          style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}>
           {enabled ? (
             typed.length > 0 ? (
               <span>{typed}</span>
